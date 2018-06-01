@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="请假流程" name="leaveProcess">
+<start displayName="start1" layout="642,76,40,45" name="start1">
+<transition g="" name="transition1" offset="0,0" to="leaveApply"/>
+</start>
+<task autoExecute="Y" displayName="请假申请" layout="588,144,153,54" name="leaveApply" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="leaderReview"/>
+</task>
+<task autoExecute="Y" displayName="组长审核" layout="591,227,150,56" name="leaderReview" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="decision1"/>
+</task>
+<decision displayName="decision1" expr="#rode" layout="641,312,54,48" name="decision1">
+<transition displayName="组长审核同意" g="" name="leaderAgree" offset="5,1" to="managerApproval"/>
+<transition displayName="组长审核不同意" g="518,335;518,169;561,169" name="leaderDisagree" offset="-62,-82" to="leaveApply"/>
+</decision>
+<task autoExecute="Y" displayName="经理审批" layout="591,397,150,57" name="managerApproval" performType="ANY" taskType="Major">
+<transition g="" name="transition6" offset="0,0" to="decision2"/>
+</task>
+<decision displayName="decision2" expr="#rode" layout="641,476,67,58" name="decision2">
+<transition displayName="总经理同意" g="" name="managerAgree" offset="0,0" to="end1"/>
+<transition displayName="总经理不同意" g="821,500;821,171" name="managerDisagree" offset="63,-166" to="leaveApply"/>
+</decision>
+<end displayName="end1" layout="640,565,103,110" name="end1"/>
+</process>

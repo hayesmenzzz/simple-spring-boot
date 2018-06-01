@@ -1,0 +1,27 @@
+package com.midai.car.query;
+
+import java.io.Serializable;
+
+
+public class $!{classNameUpCase}Query extends PaginationQuery implements Serializable {
+	
+	 
+	 #foreach($f in ${filds})
+	 	private $!{f.type} $!{f.fild};
+	 #end
+
+	#foreach($f in $!{filds})
+		public void set${f.property}(${f.type} ${f.fild}){
+			this.${f.fild}=${f.fild};
+		}
+	
+	
+	    public ${f.type} get${f.property}(){
+          return ${f.fild};
+	    }
+	
+	
+	#end
+
+		
+}

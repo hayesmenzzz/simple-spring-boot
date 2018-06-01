@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seamount.dao.LeaveProcessDao">
+	<resultMap type="com.seamount.dao.model.LeaveApplyProcess"
+		id="LeaveProcessMap">
+		<result property="id" column="id" />
+		<result property="processKey" column="process_key" />
+		<result property="processOrderId" column="process_order_id" />
+		<result property="businessId" column="business_id" />
+		<result property="taskId" column="task_id" />
+		<result property="roleName" column="role_name" />
+		<result property="defKey" column="def_key" />
+		<result property="operator" column="operator" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+	</resultMap>
+
+</mapper> 
