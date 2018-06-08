@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="请假流程-测试01" name="leaveProcess01">
+<start displayName="start1" layout="434,137,-1,-1" name="start1">
+<transition g="" name="transition1" offset="0,0" to="task1"/>
+</start>
+<task autoExecute="Y" displayName="task1" layout="412,225,-1,-1" name="task1" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="task2"/>
+</task>
+<task autoExecute="Y" displayName="task2" layout="412,309,-1,-1" name="task2" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="task3"/>
+</task>
+<task autoExecute="Y" displayName="task3" layout="412,396,-1,-1" name="task3" performType="ANY" taskType="Major">
+<transition g="" name="transition4" offset="0,0" to="task4"/>
+</task>
+<task autoExecute="Y" displayName="task4" layout="412,480,-1,-1" name="task4" performType="ANY" taskType="Major">
+<transition g="" name="transition5" offset="0,0" to="task5"/>
+</task>
+<task autoExecute="Y" displayName="task5" layout="412,564,-1,-1" name="task5" performType="ANY" taskType="Major">
+<transition g="" name="transition6" offset="0,0" to="end1"/>
+</task>
+<end displayName="end1" layout="434,648,-1,-1" name="end1"/>
+</process>

@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.stereotype.Service;
 
 import com.seamount.dao.LeaveProcessDao;
 import com.seamount.dao.model.LeaveApplyProcess;
 import com.seamount.dao.service.TblLeaveApplyProcessDaoService;
 
+@Service
 public class TblLeaveApplyProcessDaoServiceImpl implements TblLeaveApplyProcessDaoService {
 
 	@Autowired

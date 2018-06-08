@@ -27,4 +27,13 @@ public class SnakerTest {
 		
 		leaveSnakerService.startProcess(businessId, operator, variables);
 	}
+	
+	@Test
+	public void test01(){
+		String businessId = "8888888";
+		String operator = "a1";
+		Map<String,Object> variables = new HashMap<String,Object>();
+		
+		leaveSnakerService.startProcess(businessId, operator, variables);
+	}
 }

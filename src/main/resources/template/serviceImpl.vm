@@ -1,27 +1,25 @@
-package com.midai.car.service.impl;
+package com.seamount.dao.service.impl;
 
-
+import com.seamount.dao.$!{classNameUpCase}Dao;
+import com.seamount.dao.model.$!{classNameUpCase}Model;
+//import com.midai.car.query.$!{classNameUpCase}Query;
+import com.seamount.dao.service.$!{classNameUpCase}Service;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import com.alibaba.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Service;
 
-import com.midai.car.mapper.$!{classNameUpCase}Mapper;
-import com.midai.car.model.$!{classNameUpCase}Model;
-
-import com.midai.car.query.$!{classNameUpCase}Query;
-import com.midai.car.service.$!{classNameUpCase}Service;
 
     
-@Service(version="1.0.0",protocol="dubbo")
+//@Service(version="1.0.0",protocol="dubbo")
+@Service
 public class $!{classNameUpCase}ServiceImpl implements $!{classNameUpCase}Service{
 	@Autowired
-	private $!{classNameUpCase}Mapper $!{classNameLowCase}Mapper;
+	private $!{classNameUpCase}Dao $!{classNameLowCase}Dao;
 
 	
 	//根据ID查询指定的数据
 	public $!{classNameUpCase}Model getById(long id){ 
-		return $!{classNameLowCase}Mapper.getById(id);
+		return $!{classNameLowCase}Dao.getById(id);
 	}
 	
 	//删除 
@@ -29,7 +27,7 @@ public class $!{classNameUpCase}ServiceImpl implements $!{classNameUpCase}Servic
 	    #if($!{isDatabaseShard} == true)
 		   DatabaseShard.setUserName(query.getCurrentUserName());
 		#end
-		$!{classNameLowCase}Mapper.delById(id);
+		$!{classNameLowCase}Dao.delById(id);
 	}
 	
 	//新增
@@ -37,7 +35,7 @@ public class $!{classNameUpCase}ServiceImpl implements $!{classNameUpCase}Servic
 	    #if($!{isDatabaseShard} == true)
 		   DatabaseShard.setUserName(query.getCurrentUserName());
 		#end
-		return $!{classNameLowCase}Mapper.insert($!{classNameLowCase});
+		return $!{classNameLowCase}Dao.insert($!{classNameLowCase});
 		
 	}
 	
@@ -46,26 +44,26 @@ public class $!{classNameUpCase}ServiceImpl implements $!{classNameUpCase}Servic
 	    #if($!{isDatabaseShard} == true)
 		   DatabaseShard.setUserName(query.getCurrentUserName());
 		#end
-		return $!{classNameLowCase}Mapper.update($!{classNameLowCase});
+		return $!{classNameLowCase}Dao.update($!{classNameLowCase});
 	}
 	
 	//高级查询 
-	@Override
-	public List<$!{classNameUpCase}Model> fetchPageAdvance($!{classNameUpCase}Query query) {
-	    #if($!{isDatabaseShard} == true)
-		   DatabaseShard.setUserName(query.getCurrentUserName());
-		#end
-		return $!{classNameLowCase}Mapper.fetchPageAdvance(query);
-	}
+	//@Override
+	//public List<$!{classNameUpCase}Model> fetchPageAdvance($!{classNameUpCase}Query query) {
+	    //#if($!{isDatabaseShard} == true)
+		//   DatabaseShard.setUserName(query.getCurrentUserName());
+		//#end
+		//return $!{classNameLowCase}Dao.fetchPageAdvance(query);
+	//}
 	
 	//高级查询总记录数
-	@Override
-	public int fetchPageAdvanceCount($!{classNameUpCase}Query query) {
-	    #if($!{isDatabaseShard} == true)
-		   DatabaseShard.setUserName(query.getCurrentUserName());
-		#end
-		return $!{classNameLowCase}Mapper.fetchPageAdvanceCount(query);
-	}
+	//@Override
+	//public int fetchPageAdvanceCount($!{classNameUpCase}Query query) {
+	   // #if($!{isDatabaseShard} == true)
+		//   DatabaseShard.setUserName(query.getCurrentUserName());
+		//#end
+	//	return $!{classNameLowCase}Mapper.fetchPageAdvanceCount(query);
+	//}
 
 	
 	

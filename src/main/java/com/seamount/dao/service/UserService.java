@@ -1,12 +1,12 @@
 package com.seamount.dao.service;
 
-import com.seamount.dao.model.$!{classNameUpCase}Model;
-//import com.midai.car.query.$!{classNameUpCase}Query;
+import com.seamount.dao.model.UserModel;
+//import com.midai.car.query.UserQuery;
 
 import java.util.List;
 
 
-public interface $!{classNameUpCase}Service{
+public interface UserService{
 	
     /**
 	 * 
@@ -21,7 +21,7 @@ public interface $!{classNameUpCase}Service{
 	 * @return
 	 * @since JDK 1.7
 	 */
-	public $!{classNameUpCase}Model getById(long id);
+	public UserModel getById(long id);
 	
 	/**
 	 * 
@@ -46,11 +46,11 @@ public interface $!{classNameUpCase}Service{
 	 * TODO(这里描述这个方法的注意事项 – 可选).<br/>
 	 *
 	 * @author 系统生成   
-	 * @param $!{classNameLowCase}
+	 * @param user
 	 * @return
 	 * @since JDK 1.7
 	 */
-	public long insert($!{classNameUpCase}Model $!{classNameLowCase});
+	public long insert(UserModel user);
 	
 	/**
 	 * 
@@ -61,11 +61,11 @@ public interface $!{classNameUpCase}Service{
 	 * TODO(这里描述这个方法的注意事项 – 可选).<br/>
 	 *
 	 * @author 系统生成 
-	 * @param $!{classNameLowCase}
+	 * @param user
 	 * @return
 	 * @since JDK 1.7
 	 */
-	public long update($!{classNameUpCase}Model $!{classNameLowCase});
+	public long update(UserModel user);
 	
 	/**
 	 * 
@@ -80,7 +80,7 @@ public interface $!{classNameUpCase}Service{
 	 * @return
 	 * @since JDK 1.7
 	 */
-	//public List<$!{classNameUpCase}Model> fetchPageAdvance($!{classNameUpCase}Query query);
+	//public List<UserModel> fetchPageAdvance(UserQuery query);
 	
 		/**
 	 * 
@@ -95,7 +95,7 @@ public interface $!{classNameUpCase}Service{
 	 * @return
 	 * @since JDK 1.7
 	 */
-	//public int fetchPageAdvanceCount($!{classNameUpCase}Query query);
+	//public int fetchPageAdvanceCount(UserQuery query);
 	
 	
 

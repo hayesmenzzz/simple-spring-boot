@@ -9,7 +9,7 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="classpath:spring/spring-mybatis.xml"/>
+		<!-- <property name="configLocation" value="classpath:spring/spring-mybatis.xml"/> -->
 		<property name="dataSource" ref="dataSource"/>
 		<property name="typeAliasesPackage" value="org.snaker.engine.entity"></property>
 	</bean>

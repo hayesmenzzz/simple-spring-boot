@@ -9,7 +9,7 @@
 		 <setting name="localCacheScope" value="STATEMENT" />
  	</settings>
 	
-	<typeAliases>
+	<!-- <typeAliases>
 		<package name="org.snaker.engine.entity"></package>
 	</typeAliases>
 	<mappers>
@@ -23,6 +23,6 @@
 		<mapper resource="mapper/hist-query.xml"></mapper>
 		<mapper resource="mapper/surrogate.xml"></mapper>
 		<mapper resource="mapper/task-order.xml"></mapper>
-	</mappers>
+	</mappers> -->
 	
 </configuration>

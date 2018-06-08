@@ -1,4 +1,4 @@
-package com.midai.car.mapper;
+package com.seamount.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -10,11 +10,10 @@ import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
 
-import com.midai.car.model.$!{classNameUpCase}Model;
-import com.midai.car.query.$!{classNameUpCase}Query;
+import com.seamount.dao.model.$!{classNameUpCase}Model;
 
 @Mapper
-public interface  $!{classNameUpCase}Mapper{
+public interface  $!{classNameUpCase}Dao{
 	
 
 																																																																																																																				
@@ -29,7 +28,7 @@ public interface  $!{classNameUpCase}Mapper{
 	public String update="$!{update}";
 	
 	@Select("select "+columns+" from $!{talbeName} where ID=#{id}")
-	@ResultMap(value="com.midai.car.mapper.$!{classNameUpCase}Mapper.$!{classNameUpCase}ModelMap")
+	@ResultMap(value="com.seamount.dao.$!{classNameUpCase}Dao.$!{classNameUpCase}ModelMap")
 	public $!{classNameUpCase}Model getById(long id);
 	
 	@Insert("insert into $!{talbeName} ("+insert+") values ("+insertProperty+")")
@@ -42,13 +41,13 @@ public interface  $!{classNameUpCase}Mapper{
 	@Delete("delete from $!{talbeName} where 1 = 1 and ID=#{id} ")
 	public void delById(long id);
 
-	@SelectProvider(type=com.midai.car.provider.$!{classNameUpCase}Provider.class,method="fetchPageAdvance")
-	@ResultMap(value="com.midai.car.mapper.$!{classNameUpCase}Mapper.$!{classNameUpCase}ModelMap")
-	public List<$!{classNameUpCase}Model> fetchPageAdvance($!{classNameUpCase}Query query);  
+	//@SelectProvider(type=com.midai.car.provider.$!{classNameUpCase}Provider.class,method="fetchPageAdvance")
+	//@ResultMap(value="com.midai.car.mapper.$!{classNameUpCase}Mapper.$!{classNameUpCase}ModelMap")
+	//public List<$!{classNameUpCase}Model> fetchPageAdvance($!{classNameUpCase}Query query);  
 	
 	
-	@SelectProvider(type=com.midai.car.provider.$!{classNameUpCase}Provider.class,method="fetchPageAdvanceCount")
-	public int fetchPageAdvanceCount($!{classNameUpCase}Query query);
+	//@SelectProvider(type=com.midai.car.provider.$!{classNameUpCase}Provider.class,method="fetchPageAdvanceCount")
+	//public int fetchPageAdvanceCount($!{classNameUpCase}Query query);
 	
 	
 	

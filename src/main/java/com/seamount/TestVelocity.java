@@ -36,7 +36,7 @@ public class TestVelocity {
 	private static final String user = "root";
 	private static final String password = "";
 
-	private static String talbeName="tbl_car_vin_info";
+	private static String talbeName="user_role";
 
 
 	
@@ -44,8 +44,8 @@ public class TestVelocity {
 	
 	private static String classNameUpCase="";
 	
-//	private static String  rootPath = "D:\\work-dir\\midai-git\\oa-dev-new\\midai-master\\"; // 物理目录
-	private static String  rootPath = "D:\\midai-group-new-2\\"; // 物理目录
+//	private static String  rootPath = "D:\\work-dir\\midai-git\\oa-dev-new\\midai-master\\"; // 物理目录  E:\Workspace-springboot\simple-spring-boot-snaker
+	private static String  rootPath = "E:\\Workspace-springboot\\"; // 物理目录
 	
 	private static 	List<Fild> filds ;
 	
@@ -93,7 +93,8 @@ public class TestVelocity {
 	}
 	
 	private static void initTable() throws ClassNotFoundException, SQLException{
-		String[] temp = talbeName.substring(4).toLowerCase().split("_");
+//		String[] temp = talbeName.substring(4).toLowerCase().split("_");
+		String[] temp = talbeName.toLowerCase().split("_");
 		for (String str : temp) {
 			if (str != null && str.trim().length() > 0) {
 				// 首字母大写
@@ -116,9 +117,9 @@ public class TestVelocity {
 		// 生成mapper
 		createMapper();
 		// 生成provider
-		createProvider();
+//		createProvider();
 		// 生成query
-		createQuery();
+//		createQuery();
 		// 生成server
 		 createService();
 		// 生成serverImpl
@@ -378,7 +379,7 @@ public class TestVelocity {
 		ctx.put("filds", filds);
 
 		// 生成文件 模板 内容容器 新文件位置
-		merge(actionTpt, ctx, rootPath + "midai-oa-service-api/src/main/java/com/midai/car/model/"
+		merge(actionTpt, ctx, rootPath + "simple-spring-boot-snaker/src/main/java/com/seamount/dao/model/"
 				+ classNameUpCase + "Model.java");
 		System.out.println("success...model");
 	};
@@ -416,8 +417,8 @@ public class TestVelocity {
 		mapperCtx.put("property", property);
 		mapperCtx.put("update", update);
 		merge(mapperTmp, mapperCtx, rootPath
-				+ "midai-oa-service-impl/src/main/java/com/midai/car/mapper/" + classNameUpCase
-				+ "Mapper.java");
+				+ "simple-spring-boot-snaker/src/main/java/com/seamount/dao/" + classNameUpCase
+				+ "Dao.java");
 
 		System.out.println("success...mapper");
 	}
@@ -463,7 +464,7 @@ public class TestVelocity {
 		serviceCtx.put("classNameLowCase", classNameLowCase);
 
 		merge(serviceTmp, serviceCtx, rootPath
-				+ "midai-oa-service-api/src/main/java/com/midai/car/service/" + classNameUpCase
+				+ "simple-spring-boot-snaker/src/main/java/com/seamount/dao/service/" + classNameUpCase
 				+ "Service.java");
 
 		System.out.println("success...server");
@@ -476,7 +477,7 @@ public class TestVelocity {
 		serviceImplCtx.put("classNameUpCase", classNameUpCase);
 		serviceImplCtx.put("classNameLowCase", classNameLowCase);
 		merge(serviceImplTmp, serviceImplCtx, rootPath
-				+ "midai-oa-service-impl/src/main/java/com/midai/car/service/impl/" + classNameUpCase
+				+ "simple-spring-boot-snaker/src/main/java/com/seamount/dao/service/impl/" + classNameUpCase
 				+ "ServiceImpl.java");
 
 		System.out.println("success...serviceImpl");
@@ -490,7 +491,7 @@ public class TestVelocity {
 		mybatis_xxxxxCtx.put("classNameLowCase", classNameLowCase);
 		mybatis_xxxxxCtx.put("filds", filds);
 		merge(mybatis_xxxxxTmp, mybatis_xxxxxCtx, rootPath
-				+ "midai-oa-service-impl/src/main/resources/META-INF/mybatis/mapper/" + "MYBATIS_"
+				+ "simple-spring-boot-snaker/src/main/resources/mapping/" + "MYBATIS_"
 				+ classNameUpCase + "XmlMapper.xml");
 
 		System.out.println("success...mybatis_xxxxx.xml");
